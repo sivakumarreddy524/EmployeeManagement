@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "6d10f4b1-a635-4dca-a9f0-9fad253623be",
+		"name": "Employee Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Employees",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"firstName\": \"siva\",\r\n        \"lastName\": \"jonnala\",\r\n        \"dob\": \"1993-05-12\",\r\n        \"designation\": \"Programmer Analyst\",\r\n        \"salary\": 100000,\r\n        \"address\": \"bikkavolu near temple\",\r\n        \"bloodGroup\": \"B+ve\"\r\n    },\r\n    {\r\n        \"firstName\": \"vasu\",\r\n        \"lastName\": \"jonnala\",\r\n        \"dob\": \"1995-05-12\",\r\n        \"designation\": \" Senior Programmer Analyst\",\r\n        \"salary\": 150000,\r\n        \"address\": \"bikkavolu near post office\",\r\n        \"bloodGroup\": \"B-ve\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/employee/saveEmployees",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employee",
+						"saveEmployees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByFirstNameOrLastName",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employee/searchByFirstNameOrLastName?name=vasu",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employee",
+						"searchByFirstNameOrLastName"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "vasu"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByAgeGreaterThan",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employee/searchByAgeGreaterThan?age=24",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employee",
+						"searchByAgeGreaterThan"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "24"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByAgeLessThan",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employee/searchByAgeLessThan?age=28",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employee",
+						"searchByAgeLessThan"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "28"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchBySalaryGreaterThan",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employee/searchBySalaryGreaterThan?salary=100000",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employee",
+						"searchBySalaryGreaterThan"
+					],
+					"query": [
+						{
+							"key": "salary",
+							"value": "100000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchBySalaryLessThan",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employee/searchBySalaryLessThan?salary=150000",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employee",
+						"searchBySalaryLessThan"
+					],
+					"query": [
+						{
+							"key": "salary",
+							"value": "150000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByAddress",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employee/searchByAddress?address=post",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employee",
+						"searchByAddress"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "post"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByBloodGroup",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employee/searchByBloodGroup?bloodGroup=B-ve",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employee",
+						"searchByBloodGroup"
+					],
+					"query": [
+						{
+							"key": "bloodGroup",
+							"value": "B-ve"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "328b5b8e-16c2-416f-840a-a0a63cd7b1e0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "737c3d21-a93f-437b-b2bb-132a5d33e858",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "fb7d586b-21d4-4296-844a-80c57e6637f1",
+			"key": "host",
+			"value": "http://localhost:8083"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
