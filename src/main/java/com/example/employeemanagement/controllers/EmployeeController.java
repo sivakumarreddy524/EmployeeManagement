@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @PostMapping("/saveEmployees")
-    public ResponseEntity<?> saveEmployees(@Validated @RequestBody List<Employee> employeeList) {
+    public ResponseEntity<?> saveEmployees(@RequestBody List<Employee> employeeList) {
         HashMap<String, Object> map = new HashMap<>();
         employeeService.saveEmployees(employeeList);
         map.put("status", "OK");
@@ -65,6 +66,14 @@ public class EmployeeController {
     public ResponseEntity<List<Employee>> searchByBloodGroup(@RequestParam String bloodGroup) {
         List<Employee> employees = employeeService.searchByBloodGroup(bloodGroup);
         return ResponseEntity.ok(employees);
+    }
+
+    @PutMapping("/updateEmployee/{employeeId}")
+    public ResponseEntity<?> updateEmployee(@RequestBody Employee employee, @PathVariable long employeeId) {
+        HashMap<String, Object> map = new HashMap<>();
+        employeeService.updateEmployee(employee, employeeId);
+        map.put("status", "OK");
+        return ResponseEntity.ok(map);
     }
 
 }

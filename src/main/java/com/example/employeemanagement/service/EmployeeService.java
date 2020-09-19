@@ -1,7 +1,7 @@
 package com.example.employeemanagement.service;
 
 import com.example.employeemanagement.model.Employee;
-import org.springframework.data.jpa.repository.Query;
+
 
 import java.util.List;
 
@@ -20,6 +20,7 @@ public interface EmployeeService {
 
     List<Employee> searchByAddress(String address);
 
-    @Query("select e from Employee e where e.bloodGroup=:bloodGroup")
     List<Employee> searchByBloodGroup(String bloodGroup);
+
+    void updateEmployee(Employee employee, long employeeId);
 }

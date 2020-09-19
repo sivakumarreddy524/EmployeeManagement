@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -89,6 +90,23 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> searchByBloodGroup(String bloodGroup) {
         return employeeRepo.findAllByBloodGroup(bloodGroup);
+    }
+
+    @Override
+    public void updateEmployee(Employee employee, long employeeId) {
+        Optional<Employee> e = employeeRepo.findById(employeeId);
+        if (e.isPresent()) {
+            Employee ee = e.get();
+            ee.setAddress(employee.getAddress());
+            ee.setBloodGroup(employee.getBloodGroup());
+            ee.setDesignation(employee.getDesignation());
+            ee.setDob(employee.getDob());
+            ee.setFirstName(employee.getFirstName());
+            ee.setLastName(employee.getLastName());
+            ee.setSalary(employee.getSalary());
+            employeeRepo.save(ee);
+        }
+
     }
 
 

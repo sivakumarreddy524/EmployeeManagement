@@ -27,7 +27,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"firstName\": \"siva\",\r\n        \"lastName\": \"jonnala\",\r\n        \"dob\": \"1993-05-12\",\r\n        \"designation\": \"Programmer Analyst\",\r\n        \"salary\": 100000,\r\n        \"address\": \"bikkavolu near temple\",\r\n        \"bloodGroup\": \"B+ve\"\r\n    },\r\n    {\r\n        \"firstName\": \"vasu\",\r\n        \"lastName\": \"jonnala\",\r\n        \"dob\": \"1995-05-12\",\r\n        \"designation\": \" Senior Programmer Analyst\",\r\n        \"salary\": 150000,\r\n        \"address\": \"bikkavolu near post office\",\r\n        \"bloodGroup\": \"B-ve\"\r\n    }\r\n]",
+					"raw": "[\r\n    {\r\n\r\n        \"lastName\": \"jonnala\",\r\n        \"dob\": \"1993-05-12\",\r\n        \"designation\": \"Programmer Analyst\",\r\n        \"salary\": 100000,\r\n        \"address\": \"bikkavolu near temple\",\r\n        \"bloodGroup\": \"B+ve\"\r\n    },\r\n    {\r\n        \"firstName\": \"vasu\",\r\n        \"lastName\": \"jonnala\",\r\n        \"dob\": \"1995-05-12\",\r\n        \"designation\": \" Senior Programmer Analyst\",\r\n        \"salary\": 150000,\r\n        \"address\": \"bikkavolu near post office\",\r\n        \"bloodGroup\": \"B-ve\"\r\n    }\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -319,6 +319,49 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "updateEmployee",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"siva kumar reddy\",\r\n    \"lastName\": \"jonnala\",\r\n    \"dob\": \"1993-05-12\",\r\n    \"designation\": \"Programmer Analyst\",\r\n    \"salary\": 100000,\r\n    \"address\": \"bikkavolu near temple\",\r\n    \"bloodGroup\": \"B+ve\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/employee/updateEmployee/3",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employee",
+						"updateEmployee",
+						"3"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -345,7 +388,7 @@
 	],
 	"variable": [
 		{
-			"id": "fb7d586b-21d4-4296-844a-80c57e6637f1",
+			"id": "891a6a49-8191-4cca-9a33-a6f4324558bf",
 			"key": "host",
 			"value": "http://localhost:8083"
 		}
